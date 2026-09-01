@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ACVS - Gestion du Personnel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600&amp;family=JetBrains+Mono:wght@500&amp;family=Libre+Franklin:wght@600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#fefcff",
+                        "secondary": "#6e5e00",
+                        "outline": "#717786",
+                        "secondary-fixed": "#ffe255",
+                        "on-surface": "#1c1b1b",
+                        "tertiary-fixed": "#ffdad6",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-primary-fixed-variant": "#004590",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-secondary-fixed": "#211b00",
+                        "surface-container-high": "#eae7e7",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#001b3f",
+                        "on-tertiary-fixed": "#410003",
+                        "tertiary-fixed-dim": "#ffb3ad",
+                        "surface-container-low": "#f6f3f2",
+                        "outline-variant": "#c1c6d7",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#e5c500",
+                        "inverse-surface": "#313030",
+                        "surface-dim": "#dcd9d9",
+                        "surface": "#fcf9f8",
+                        "on-tertiary-fixed-variant": "#930011",
+                        "on-tertiary-container": "#fffbff",
+                        "on-surface-variant": "#414754",
+                        "background": "#fcf9f8",
+                        "primary-container": "#0072e5",
+                        "on-secondary-container": "#706000",
+                        "tertiary-container": "#e2242c",
+                        "secondary-container": "#fddc21",
+                        "surface-tint": "#005cbc",
+                        "surface-container": "#f0eded",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1c1b1b",
+                        "inverse-primary": "#abc7ff",
+                        "tertiary": "#bb0019",
+                        "primary": "#005ab7",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#534600",
+                        "primary-fixed": "#d7e2ff",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#abc7ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "space-4": "16px",
+                        "space-6": "24px",
+                        "space-2": "8px",
+                        "container-max": "1280px",
+                        "space-12": "48px",
+                        "space-1": "4px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "text-xs": ["Arimo"],
+                        "label-mono": ["JetBrains Mono"],
+                        "headline-md": ["Libre Franklin"],
+                        "display-lg": ["Libre Franklin"],
+                        "body-base": ["Arimo"]
+                    },
+                    "fontSize": {
+                        "text-xs": ["12px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "label-mono": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-lg": ["36px", { "lineHeight": "1.1", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+                        "body-base": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-base min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-full py-space-6 bg-surface-container-low dark:bg-surface-container-lowest h-screen w-64 fixed left-0 border-r border-outline border-r border-outline">
+<div class="px-space-6 mb-8 flex flex-col items-center">
+<img alt="DRC National Seal" class="w-16 h-16 mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtcuGAm1rC_bo_xe1lnhJIiJWvzVQsTUx5B9JdsveqiYcpKQmt1_xIMSuFt-nFQklvFjcX4LEK0nX-8idjil4P8k6hCGxBeYcU8GO_aNSwushgcdU4q8qRT3XMER8LUtdOmhUXoyWyiozqmosDCdSD3MzMIIFR6uWOKN1hofymBwY6x8VFzTuKSA0T94IA_SUjI1-WG8qjS8G2PEZUTsrVJ-CfuLJ51P6Rr3vLMJyVz3ZaLX2BiF5KJb6hdmqcwtx87A"/>
+<div class="text-center">
+<h1 class="font-headline-md text-headline-md text-on-surface-variant">ACVS Portal</h1>
+<p class="font-text-xs text-text-xs text-on-surface-variant opacity-80 uppercase tracking-wider">Official Registrar Access</p>
+</div>
+</div>
+<div class="px-space-6 mb-6">
+<button class="w-full bg-primary text-on-primary font-label-mono text-label-mono py-3 px-4 rounded flex items-center justify-center gap-2 hover:bg-on-primary-fixed-variant transition-colors">
+<span class="material-symbols-outlined">add</span>
+                Verify New Certificate
+            </button>
+</div>
+<ul class="flex-1 flex flex-col gap-2 px-4">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-mono text-label-mono">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+<span class="font-label-mono text-label-mono">Registrations</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded bg-primary-container text-on-primary-container font-bold border-r-4 border-primary scale-[0.99]" href="#">
+<span class="material-symbols-outlined filled">group</span>
+<span class="font-label-mono text-label-mono">Staff Management</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+<span class="font-label-mono text-label-mono">Activity Log</span>
+</a>
+</li>
+</ul>
+<div class="px-4 mt-auto">
+<div class="border-t border-outline-variant pt-4 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface transition-colors font-text-xs text-text-xs" href="#">
+<span class="material-symbols-outlined text-sm">lan</span>
+                    System Status
+                </a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface transition-colors font-text-xs text-text-xs" href="#">
+<span class="material-symbols-outlined text-sm">support_agent</span>
+                    Help Desk
+                </a>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 md:ml-64 flex flex-col">
+<!-- TopNavBar (Mobile Only Fallback) -->
+<header class="md:hidden flex justify-between items-center w-full px-space-6 py-space-4 max-w-container-max mx-auto bg-surface dark:bg-surface docked full-width top-0 border-b-2 border-outline border-b-2 border-outline bg-surface dark:bg-surface-container">
+<div class="flex items-center gap-2 border-l-4 border-primary pl-4 font-headline-md font-bold text-on-surface dark:text-inverse-on-surface">
+                MINISTÈRE DE L'ÉDUCATION NATIONALE
+            </div>
+<div class="flex items-center gap-4 text-primary dark:text-primary-fixed">
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-low transition-colors duration-150 p-2 rounded-full">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-low transition-colors duration-150 p-2 rounded-full">account_circle</span>
+</div>
+</header>
+<div class="flex-1 p-space-6 max-w-container-max mx-auto w-full grid grid-cols-12 gap-6">
+<!-- Header Section -->
+<div class="col-span-12 flex justify-between items-end mb-8 border-b border-outline-variant pb-4">
+<div>
+<h2 class="font-display-lg text-display-lg text-on-surface mb-2">Gestion du Personnel</h2>
+<p class="font-body-base text-body-base text-on-surface-variant">Manage institutional access and roles.</p>
+</div>
+<button class="bg-primary text-on-primary font-label-mono text-label-mono py-2 px-6 rounded shadow-sm hover:bg-on-primary-fixed-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined">person_add</span>
+                    Inviter un agent
+                </button>
+</div>
+<!-- Table Section -->
+<div class="col-span-12">
+<div class="bg-surface-container-lowest border border-outline-variant rounded shadow-sm overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="py-4 px-6 font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider">Name</th>
+<th class="py-4 px-6 font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider">Role</th>
+<th class="py-4 px-6 font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="py-4 px-6 font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider">Date Joined</th>
+<th class="py-4 px-6 font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-base text-body-base text-on-surface">
+<tr class="border-b border-outline-variant hover:bg-surface-container transition-colors">
+<td class="py-4 px-6 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-bold">KM</div>
+<span class="font-semibold">Kabongo Mbuyi</span>
+</td>
+<td class="py-4 px-6">Registrar</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800" style="background-color: rgba(16, 185, 129, 0.1); color: #065f46;">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Active
+                                    </span>
+</td>
+<td class="py-4 px-6 font-label-mono text-sm text-on-surface-variant">2023-09-12</td>
+<td class="py-4 px-6 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="border-b border-outline-variant bg-surface-container-lowest hover:bg-surface-container transition-colors">
+<td class="py-4 px-6 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-bold">AN</div>
+<span class="font-semibold">Amina Ndele</span>
+</td>
+<td class="py-4 px-6">Admin</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800" style="background-color: rgba(16, 185, 129, 0.1); color: #065f46;">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Active
+                                    </span>
+</td>
+<td class="py-4 px-6 font-label-mono text-sm text-on-surface-variant">2023-01-05</td>
+<td class="py-4 px-6 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container transition-colors">
+<td class="py-4 px-6 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-bold">JL</div>
+<span class="font-semibold">Jean-Luc Tshibangu</span>
+</td>
+<td class="py-4 px-6">ICT</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium" style="background-color: rgba(245, 158, 11, 0.1); color: #b45309;">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Pending
+                                    </span>
+</td>
+<td class="py-4 px-6 font-label-mono text-sm text-on-surface-variant">2024-05-20</td>
+<td class="py-4 px-6 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="mt-auto flex flex-col md:flex-row justify-between items-center px-space-6 py-space-4 w-full bg-surface-dim dark:bg-inverse-surface full-width bottom-0 border-t border-outline-variant border-t border-outline-variant">
+<div class="font-text-xs text-text-xs text-on-surface dark:text-inverse-on-surface mb-2 md:mb-0">
+                © 2024 Ministère de l'Éducation Nationale et Nouvelle Citoyenneté - République Démocratique du Congo
+            </div>
+<div class="flex gap-4 font-text-xs text-text-xs">
+<a class="text-on-surface-variant opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant opacity-80 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="text-on-surface-variant opacity-80 hover:opacity-100 transition-opacity" href="#">Security Disclosure</a>
+</div>
+</footer>
+</main>
+</body></html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ACVS Ministry Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&amp;family=JetBrains+Mono:wght@500&amp;family=Libre+Franklin:wght@600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#ffb3ad",
+                        "surface-container-high": "#eae7e7",
+                        "on-surface-variant": "#414754",
+                        "inverse-surface": "#313030",
+                        "on-surface": "#1c1b1b",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#211b00",
+                        "secondary-fixed": "#ffe255",
+                        "on-secondary-container": "#706000",
+                        "secondary-container": "#fddc21",
+                        "surface-container-low": "#f6f3f2",
+                        "surface": "#fcf9f8",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#410003",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary-fixed-variant": "#930011",
+                        "on-tertiary-container": "#fffbff",
+                        "on-primary-container": "#fefcff",
+                        "secondary": "#6e5e00",
+                        "primary-fixed-dim": "#abc7ff",
+                        "primary-container": "#0072e5",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#e5c500",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#004590",
+                        "on-background": "#1c1b1b",
+                        "tertiary-fixed": "#ffdad6",
+                        "primary": "#005ab7",
+                        "on-secondary-fixed-variant": "#534600",
+                        "background": "#fcf9f8",
+                        "tertiary": "#bb0019",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-primary-fixed": "#001b3f",
+                        "outline-variant": "#c1c6d7",
+                        "outline": "#717786",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#e2242c",
+                        "surface-variant": "#e5e2e1",
+                        "primary-fixed": "#d7e2ff",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#f0eded",
+                        "inverse-primary": "#abc7ff",
+                        "surface-bright": "#fcf9f8",
+                        "surface-tint": "#005cbc"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "0.75rem"
+                    },
+                    spacing: {
+                        "space-2": "8px",
+                        "space-12": "48px",
+                        "container-max": "1280px",
+                        "space-1": "4px",
+                        "space-6": "24px",
+                        "space-4": "16px",
+                        "unit": "4px"
+                    },
+                    fontFamily: {
+                        "display-lg": ["Libre Franklin"],
+                        "label-mono": ["JetBrains Mono"],
+                        "body-base": ["Arimo"],
+                        "text-xs": ["Arimo"],
+                        "headline-md": ["Libre Franklin"]
+                    },
+                    fontSize: {
+                        "display-lg": ["36px", { lineHeight: "1.1", letterSpacing: "-0.01em", fontWeight: "800" }],
+                        "label-mono": ["14px", { lineHeight: "1.4", fontWeight: "500" }],
+                        "body-base": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "text-xs": ["12px", { lineHeight: "1.4", fontWeight: "400" }],
+                        "headline-md": ["28px", { lineHeight: "1.3", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .status-grace {
+                @apply bg-secondary-fixed/10 text-on-secondary-fixed-variant border border-secondary-fixed/20;
+            }
+            .status-anchored {
+                @apply bg-primary-fixed/10 text-on-primary-fixed-variant border border-primary-fixed/20;
+            }
+            .status-disabled {
+                @apply bg-error-container text-on-error-container;
+            }
+            .ledger-card {
+                @apply bg-surface-container-lowest border border-outline-variant p-space-6 rounded flex flex-col gap-space-4;
+            }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-base text-body-base antialiased min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-low border-r border-outline-variant h-screen w-64 fixed left-0 top-0 flex flex-col p-space-4 gap-space-2 z-50">
+<div class="flex flex-col items-center mb-space-6">
+<img alt="DRC Official Seal" class="w-24 h-24 mb-space-4 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9wOJ80XzZX3vNa0riMvg_0ZM7cauKpRWpSq25UT3oU7D203DyqhfNkwApGDujHcVfhqV13aTftFYqTayvujnV70SdDFtcee8j2fwDKAon3Gs7u81qoCFtCcyKeQB4S2A_8wl2T4E5cjIuGkui3MHn-VBx-RGSSUVFGahMiwcUIr1JpcBHNXvaw9Hzr-5hGDcPKW52_4bY0oMbaDzvz-zPhhgWKoo9UYkRvdW5YImJddI45BNHx6A2nzMXSBYVZ9xxeQ"/>
+<h1 class="font-headline-md text-headline-md text-on-surface text-center leading-tight">DRC Ministry</h1>
+<p class="font-body-base text-body-base text-on-surface-variant">Éducation Nationale</p>
+</div>
+<div class="flex flex-col gap-space-2 flex-grow">
+<!-- Active: Overview -->
+<a class="bg-primary-fixed text-on-primary-fixed font-bold rounded-lg p-space-2 flex items-center gap-space-2 scale-95 duration-100 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Overview
+            </a>
+<a class="text-on-surface-variant hover:bg-surface-container-highest rounded-lg p-space-2 flex items-center gap-space-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="pending_actions">pending_actions</span>
+                Verification Queue
+            </a>
+<a class="text-on-surface-variant hover:bg-surface-container-highest rounded-lg p-space-2 flex items-center gap-space-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                User Registry
+            </a>
+<a class="text-on-surface-variant hover:bg-surface-container-highest rounded-lg p-space-2 flex items-center gap-space-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+                Access Control
+            </a>
+<a class="text-on-surface-variant hover:bg-surface-container-highest rounded-lg p-space-2 flex items-center gap-space-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+                Security Logs
+            </a>
+</div>
+<button class="bg-error text-on-error font-headline-md text-body-base py-space-2 rounded-lg mt-auto mb-space-4 hover:opacity-90">Revoke Access</button>
+<div class="flex flex-col gap-space-2 border-t border-outline-variant pt-space-4">
+<a class="text-on-surface-variant hover:bg-surface-container-highest rounded-lg p-space-2 flex items-center gap-space-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                Support
+            </a>
+<a class="text-on-surface-variant hover:bg-surface-container-highest rounded-lg p-space-2 flex items-center gap-space-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Sign Out
+            </a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="ml-64 flex-grow p-space-6 md:p-space-12 max-w-container-max mx-auto w-full">
+<header class="mb-space-12 flex justify-between items-end border-b border-outline-variant pb-space-4">
+<div>
+<h2 class="font-display-lg text-display-lg text-on-surface mb-space-2">System Overview</h2>
+<p class="font-body-base text-body-base text-on-surface-variant">Real-time ledger status for the Academic Certificate Verification System.</p>
+</div>
+<div class="text-right">
+<p class="font-label-mono text-label-mono text-on-surface-variant">Last Updated</p>
+<p class="font-label-mono text-label-mono text-on-surface">2023-10-27 14:32:01 UTC</p>
+</div>
+</header>
+<!-- 12-Column Grid for Metrics -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-6 mb-space-12">
+<!-- Total Institutions -->
+<div class="md:col-span-4 ledger-card">
+<div class="flex items-center gap-space-2 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<h3 class="font-headline-md text-body-base">Registered Institutions</h3>
+</div>
+<p class="font-display-lg text-display-lg text-primary">1,248</p>
+<div class="flex items-center justify-between text-text-xs mt-auto pt-space-2 border-t border-outline-variant">
+<span class="text-on-surface-variant">Active nodes in network</span>
+<span class="text-primary font-bold">+12 this month</span>
+</div>
+</div>
+<!-- Total Certificates Breakdown -->
+<div class="md:col-span-8 ledger-card">
+<div class="flex items-center gap-space-2 text-on-surface-variant mb-space-2">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+<h3 class="font-headline-md text-body-base">Certificate Ledger Volume</h3>
+</div>
+<div class="flex items-end gap-space-6 mb-space-4">
+<p class="font-display-lg text-display-lg text-on-surface leading-none">845,902</p>
+<p class="font-body-base text-body-base text-on-surface-variant pb-1">Total Records</p>
+</div>
+<div class="grid grid-cols-3 gap-space-4 mt-auto">
+<!-- Anchored -->
+<div class="bg-surface p-space-4 rounded border border-outline-variant/50 border-b-2 border-b-primary">
+<div class="flex items-center gap-space-2 mb-space-1">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<p class="font-label-mono text-text-xs text-on-surface-variant">Anchored (Immutable)</p>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface">812,450</p>
+</div>
+<!-- Grace Period -->
+<div class="bg-surface p-space-4 rounded border border-outline-variant/50 border-b-2 border-b-secondary-container">
+<div class="flex items-center gap-space-2 mb-space-1">
+<div class="w-2 h-2 rounded-full bg-secondary-container"></div>
+<p class="font-label-mono text-text-xs text-on-surface-variant">Grace Period (Editable)</p>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface">32,104</p>
+</div>
+<!-- Disabled -->
+<div class="bg-surface p-space-4 rounded border border-outline-variant/50 border-b-2 border-b-error">
+<div class="flex items-center gap-space-2 mb-space-1">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+<p class="font-label-mono text-text-xs text-on-surface-variant">Revoked / Disabled</p>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface">1,348</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-6">
+<!-- Recent Activity List (8 cols) -->
+<div class="md:col-span-8 ledger-card">
+<div class="flex justify-between items-center border-b border-outline-variant pb-space-4">
+<h3 class="font-headline-md text-body-base flex items-center gap-space-2">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+                        System-Wide Activity Log
+                    </h3>
+<button class="font-label-mono text-label-mono text-primary hover:underline">View Full Log</button>
+</div>
+<div class="flex flex-col gap-0">
+<!-- Activity Row 1 -->
+<div class="py-space-4 flex justify-between items-center border-b border-outline-variant/50 hover:bg-surface-container-lowest transition-colors">
+<div class="flex flex-col gap-space-1">
+<p class="font-label-mono text-label-mono text-on-surface">Batch Anchoring Complete</p>
+<p class="font-body-base text-text-xs text-on-surface-variant">Université de Kinshasa • 450 records sealed.</p>
+</div>
+<div class="text-right flex flex-col items-end gap-space-1">
+<span class="status-anchored px-2 py-1 rounded text-text-xs font-label-mono inline-block">SEALED</span>
+<p class="font-label-mono text-text-xs text-on-surface-variant">10 mins ago</p>
+</div>
+</div>
+<!-- Activity Row 2 -->
+<div class="py-space-4 flex justify-between items-center border-b border-outline-variant/50 hover:bg-surface-container-lowest transition-colors">
+<div class="flex flex-col gap-space-1">
+<p class="font-label-mono text-label-mono text-on-surface">Certificate Revocation Issued</p>
+<p class="font-body-base text-text-xs text-on-surface-variant">ID: <span class="bg-surface-dim px-1 font-label-mono">CERT-992-A8F</span> • Reason: Fraudulent Entry</p>
+</div>
+<div class="text-right flex flex-col items-end gap-space-1">
+<span class="status-disabled px-2 py-1 rounded text-text-xs font-label-mono inline-block font-bold">REVOKED</span>
+<p class="font-label-mono text-text-xs text-on-surface-variant">42 mins ago</p>
+</div>
+</div>
+<!-- Activity Row 3 -->
+<div class="py-space-4 flex justify-between items-center border-b border-outline-variant/50 hover:bg-surface-container-lowest transition-colors">
+<div class="flex flex-col gap-space-1">
+<p class="font-label-mono text-label-mono text-on-surface">New Institution Registration</p>
+<p class="font-body-base text-text-xs text-on-surface-variant">Institut Supérieur de Commerce • Pending Review</p>
+</div>
+<div class="text-right flex flex-col items-end gap-space-1">
+<span class="bg-surface-container-high text-on-surface px-2 py-1 rounded text-text-xs font-label-mono inline-block">PENDING</span>
+<p class="font-label-mono text-text-xs text-on-surface-variant">2 hrs ago</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Pending Institutions (4 cols) -->
+<div class="md:col-span-4 ledger-card bg-surface-container-low border-none">
+<div class="flex items-center gap-space-2 text-on-surface mb-space-4">
+<span class="material-symbols-outlined text-secondary-container" data-icon="notification_important">notification_important</span>
+<h3 class="font-headline-md text-body-base">Action Required</h3>
+</div>
+<div class="bg-surface p-space-4 rounded border border-outline-variant mb-space-4">
+<p class="font-headline-md text-headline-md text-on-surface mb-space-1">14</p>
+<p class="font-body-base text-body-base text-on-surface-variant mb-space-4">Institutions pending verification and credential issuance.</p>
+<ul class="flex flex-col gap-space-2 mb-space-6 border-t border-outline-variant/50 pt-space-4">
+<li class="font-label-mono text-text-xs text-on-surface flex justify-between">
+<span>Inst. Sup. Pédagogique</span>
+<span class="text-on-surface-variant">2d ago</span>
+</li>
+<li class="font-label-mono text-text-xs text-on-surface flex justify-between">
+<span>Univ. Nouveaux Horizons</span>
+<span class="text-on-surface-variant">3d ago</span>
+</li>
+<li class="font-label-mono text-text-xs text-on-surface flex justify-between">
+<span>Écol. Sup. d'Informatique</span>
+<span class="text-on-surface-variant">5d ago</span>
+</li>
+</ul>
+</div>
+<a class="mt-auto block text-center bg-on-surface text-surface py-space-2 px-space-4 rounded font-headline-md text-body-base hover:bg-on-surface/90 transition-colors" href="#">
+                    Review Pending Institutions
+                </a>
+</div>
+</div>
+</main>
+</body></html>

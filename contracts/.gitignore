@@ -1,0 +1,12 @@
+node_modules/
+build/
+.env
+.env.*
+*.log
+.DS_Store
+
+# Track the minimal ABI artifact so the Python backend can import the
+# contract interface without re-compiling. The rest of build/ (bytecode,
+# source maps, full Truffle artifacts) stays ignored.
+!build/contracts/*.abi.json
+
