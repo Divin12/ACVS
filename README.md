@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # ACVS — Academic Certificate Verification System
 
 A pilot-scope implementation of a blockchain-backed academic certificate verification platform
