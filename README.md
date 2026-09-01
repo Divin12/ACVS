@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ACVS — Academic Certificate Verification System
 
 A pilot-scope implementation of a blockchain-backed academic certificate verification platform
@@ -161,3 +162,6 @@ Built against the methodology described in Chapter 3 of the accompanying thesis 
 hybrid PostgreSQL/Ethereum architecture, V-Model testing, and a Pilot Deployment strategy
 (single institution, not a public launch). Scope decisions throughout this codebase favor
 components that are easy to explain and defend individually over generalized abstractions.
+=======
+# ACVS
+>>>>>>> 569a1f71fb856f60c7b9b4df13ae1682963bf036
