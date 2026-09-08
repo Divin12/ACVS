@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ACVS Institution Approval</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;800&amp;family=Arimo:wght@400;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#ffb3ad",
+                      "surface-container-high": "#eae7e7",
+                      "on-surface-variant": "#414754",
+                      "inverse-surface": "#313030",
+                      "on-surface": "#1c1b1b",
+                      "inverse-on-surface": "#f3f0ef",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed": "#211b00",
+                      "secondary-fixed": "#ffe255",
+                      "on-secondary-container": "#706000",
+                      "secondary-container": "#fddc21",
+                      "surface-container-low": "#f6f3f2",
+                      "surface": "#fcf9f8",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed": "#410003",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#dcd9d9",
+                      "on-tertiary-fixed-variant": "#930011",
+                      "on-tertiary-container": "#fffbff",
+                      "on-primary-container": "#fefcff",
+                      "secondary": "#6e5e00",
+                      "primary-fixed-dim": "#abc7ff",
+                      "primary-container": "#0072e5",
+                      "on-error": "#ffffff",
+                      "secondary-fixed-dim": "#e5c500",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed-variant": "#004590",
+                      "on-background": "#1c1b1b",
+                      "tertiary-fixed": "#ffdad6",
+                      "primary": "#005ab7",
+                      "on-secondary-fixed-variant": "#534600",
+                      "background": "#fcf9f8",
+                      "tertiary": "#bb0019",
+                      "surface-container-highest": "#e5e2e1",
+                      "on-primary-fixed": "#001b3f",
+                      "outline-variant": "#c1c6d7",
+                      "outline": "#717786",
+                      "on-secondary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "tertiary-container": "#e2242c",
+                      "surface-variant": "#e5e2e1",
+                      "primary-fixed": "#d7e2ff",
+                      "on-error-container": "#93000a",
+                      "surface-container": "#f0eded",
+                      "inverse-primary": "#abc7ff",
+                      "surface-bright": "#fcf9f8",
+                      "surface-tint": "#005cbc"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "space-2": "8px",
+                      "space-12": "48px",
+                      "container-max": "1280px",
+                      "space-1": "4px",
+                      "space-6": "24px",
+                      "space-4": "16px",
+                      "unit": "4px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Libre Franklin"
+                      ],
+                      "label-mono": [
+                              "JetBrains Mono"
+                      ],
+                      "body-base": [
+                              "Arimo"
+                      ],
+                      "text-xs": [
+                              "Arimo"
+                      ],
+                      "headline-md": [
+                              "Libre Franklin"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-mono": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-base": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "text-xs": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .seal-moment-border {
+            border-image: repeating-linear-gradient(45deg, var(--tw-colors-primary) 0, var(--tw-colors-primary) 2px, transparent 2px, transparent 6px) 1;
+            border-width: 1px;
+            border-style: solid;
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background font-body-base antialiased flex">
+<!-- SideNavBar -->
+<aside class="bg-surface-container-low dark:bg-surface-container-lowest h-screen w-64 fixed left-0 top-0 border-r border-outline-variant flex flex-col p-space-4 gap-space-2 z-20 hidden md:flex">
+<div class="flex items-center gap-4 mb-space-6 pb-space-4 border-b border-outline-variant">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center shrink-0">
+<img alt="DRC Official Seal" class="w-10 h-10 object-contain rounded-full" data-alt="A highly detailed illustration of the Democratic Republic of the Congo Official Ministry Seal. Rendered in a sober, official style suitable for a government web portal. The seal is crisp, using high contrast against a light background, emphasizing authority and bureaucracy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC6GD0d-H3vtavCQwpSDslAkHjFSxRWMcw6fg-3MarXj7xV7-YIre69JXKXoEhHYTrfG4v99dUF2kuGdebsp_2TyAUVJJ-nKoye4q_ZcKuz4iRwlIY9cO-pPTkZ5izrNvSqcvP6Cmd6J4gGul8AaH85OmUBO7NEPDhvWwVLAGkpXhse4OEmAvaU-a7rrwa-uhurmxSdV3hRLdDoMp1CZuHAA7gr4-fT6Cdxcg2ik7wfWCSuSnDoHHz"/>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">DRC Ministry</h1>
+<span class="font-body-base text-text-xs text-on-surface-variant block uppercase tracking-wide">Éducation Nationale</span>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg hover:bg-surface-container-high transition-all scale-95 duration-100 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">dashboard</span>
+<span class="font-body-base text-body-base">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg hover:bg-surface-container-high transition-all scale-95 duration-100 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">pending_actions</span>
+<span class="font-body-base text-body-base">Verification Queue</span>
+</a>
+<!-- Active Tab -->
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-fixed text-on-primary-fixed font-bold rounded-lg transition-all scale-95 duration-100 group" href="#">
+<span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-body-base text-body-base">User Registry</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg hover:bg-surface-container-high transition-all scale-95 duration-100 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">admin_panel_settings</span>
+<span class="font-body-base text-body-base">Access Control</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg hover:bg-surface-container-high transition-all scale-95 duration-100 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">history_edu</span>
+<span class="font-body-base text-body-base">Security Logs</span>
+</a>
+</nav>
+<div class="mt-auto pt-space-4 border-t border-outline-variant flex flex-col gap-2">
+<button class="w-full py-2 px-4 border border-error text-error hover:bg-error-container hover:text-on-error-container rounded font-body-base text-body-base transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">block</span>
+                 Revoke Access
+             </button>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">help</span>
+<span class="font-body-base text-text-xs">Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+<span class="font-body-base text-text-xs">Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-64 min-h-screen flex flex-col">
+<!-- Top Mobile Header (Suppressed on Desktop as per SideNav) -->
+<header class="bg-surface border-b border-outline-variant px-space-4 py-space-4 flex justify-between items-center md:hidden sticky top-0 z-10 shadow-sm">
+<h1 class="font-display-lg text-[24px] font-bold text-primary uppercase tracking-tight">ACVS</h1>
+<button class="text-on-surface-variant p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Canvas -->
+<div class="p-space-6 md:p-space-12 max-w-container-max mx-auto w-full grid grid-cols-12 gap-6">
+<!-- Page Header -->
+<div class="col-span-12 mb-space-4 flex flex-col md:flex-row justify-between items-start md:items-end border-b-2 border-surface-dim pb-4 gap-4">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="flex items-center px-2 py-1 rounded bg-secondary-container text-on-secondary-container bg-opacity-20 border border-secondary-container text-xs font-bold uppercase tracking-wider">
+<span class="w-2 h-2 rounded-full bg-secondary mr-2 block"></span> Pending Approval
+                        </span>
+<span class="font-label-mono text-label-mono text-outline bg-surface-container px-2 py-1 rounded">ID: INST-2024-089</span>
+</div>
+<h2 class="font-display-lg text-display-lg text-on-surface">Institut Supérieur de Commerce</h2>
+<p class="font-body-base text-body-base text-on-surface-variant mt-1">Application for Institutional Accreditation to Issue Anchored Certificates.</p>
+</div>
+<!-- Lifecycle Stepper Indicator -->
+<div class="flex items-center gap-2 text-sm">
+<div class="flex items-center text-outline">
+<span class="material-symbols-outlined text-[16px] mr-1">check_circle</span> Submitted
+                    </div>
+<span class="w-4 h-px bg-outline-variant"></span>
+<div class="flex items-center font-bold text-primary">
+<span class="material-symbols-outlined text-[16px] mr-1" style="font-variation-settings: 'FILL' 1;">rate_review</span> Review
+                    </div>
+<span class="w-4 h-px bg-outline-variant"></span>
+<div class="flex items-center text-outline-variant">
+<span class="material-symbols-outlined text-[16px] mr-1">gpp_good</span> Anchored
+                    </div>
+</div>
+</div>
+<!-- Left Column: Primary Details (8 cols) -->
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-6">
+<!-- Institution Profile Card -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-lg p-space-6 seal-moment-border bg-opacity-50">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 flex items-center border-b border-surface-dim pb-2">
+<span class="material-symbols-outlined mr-2 text-primary">account_balance</span>
+                        Institution Profile
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+<div>
+<label class="block font-body-base text-text-xs text-on-surface-variant uppercase tracking-wider mb-1">Official Name</label>
+<p class="font-body-base text-body-base font-semibold text-on-surface">Institut Supérieur de Commerce de Kinshasa (ISC)</p>
+</div>
+<div>
+<label class="block font-body-base text-text-xs text-on-surface-variant uppercase tracking-wider mb-1">Institution Type</label>
+<p class="font-body-base text-body-base text-on-surface">Public Higher Education</p>
+</div>
+<div>
+<label class="block font-body-base text-text-xs text-on-surface-variant uppercase tracking-wider mb-1">Established Date</label>
+<p class="font-body-base text-body-base text-on-surface">1964</p>
+</div>
+<div>
+<label class="block font-body-base text-text-xs text-on-surface-variant uppercase tracking-wider mb-1">Provincial Jurisdiction</label>
+<p class="font-body-base text-body-base text-on-surface">Kinshasa</p>
+</div>
+<div class="col-span-1 md:col-span-2">
+<label class="block font-body-base text-text-xs text-on-surface-variant uppercase tracking-wider mb-1">Physical Address</label>
+<p class="font-body-base text-body-base text-on-surface">Avenue de la Libération (ex-24 Novembre), Commune de la Gombe, Kinshasa, DRC</p>
+</div>
+</div>
+<p class="font-body-base text-text-xs text-outline mt-4 italic flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-1">info</span> Editable until grace period ends.
+                    </p>
+</section>
+<!-- Document Verification -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-lg p-space-6 shadow-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 flex items-center border-b border-surface-dim pb-2">
+<span class="material-symbols-outlined mr-2 text-primary">description</span>
+                        Registration Documents
+                    </h3>
+<ul class="flex flex-col gap-3">
+<li class="flex items-center justify-between p-3 border border-surface-dim rounded hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline">picture_as_pdf</span>
+<div>
+<p class="font-body-base text-body-base font-semibold text-on-surface">Arrêté Ministériel d'Agrément.pdf</p>
+<p class="font-label-mono text-text-xs text-outline">2.4 MB • Uploaded Oct 12, 2024</p>
+</div>
+</div>
+<button class="text-primary font-semibold font-body-base hover:underline flex items-center text-sm">
+                                View <span class="material-symbols-outlined text-[16px] ml-1">open_in_new</span>
+</button>
+</li>
+<li class="flex items-center justify-between p-3 border border-surface-dim rounded hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline">picture_as_pdf</span>
+<div>
+<p class="font-body-base text-body-base font-semibold text-on-surface">Status_ISC_2020_Revision.pdf</p>
+<p class="font-label-mono text-text-xs text-outline">5.1 MB • Uploaded Oct 12, 2024</p>
+</div>
+</div>
+<button class="text-primary font-semibold font-body-base hover:underline flex items-center text-sm">
+                                View <span class="material-symbols-outlined text-[16px] ml-1">open_in_new</span>
+</button>
+</li>
+<li class="flex items-center justify-between p-3 border border-surface-dim rounded hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline">verified</span>
+<div>
+<p class="font-body-base text-body-base font-semibold text-on-surface">Signature Digital Certificate (X.509)</p>
+<p class="font-label-mono text-text-xs text-outline">Hash: <span class="bg-surface-container-high px-1 rounded">a7b2...9f4e</span></p>
+</div>
+</div>
+<span class="text-emerald-700 bg-emerald-50 px-2 py-1 rounded text-xs font-bold border border-emerald-200 flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-1">check</span> Validated
+                            </span>
+</li>
+</ul>
+</section>
+</div>
+<!-- Right Column: People & Actions (4 cols) -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<!-- Head Registrar -->
+<section class="bg-surface-container-low border border-outline-variant rounded-lg p-space-6 shadow-sm">
+<h3 class="font-headline-md text-[20px] font-semibold text-on-surface mb-4 flex items-center border-b border-surface-dim pb-2">
+<span class="material-symbols-outlined mr-2 text-on-surface-variant">person_pin</span>
+                        Head Registrar
+                    </h3>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded bg-surface-dim flex items-center justify-center shrink-0 border border-outline-variant">
+<span class="material-symbols-outlined text-outline text-[24px]">person</span>
+</div>
+<div>
+<p class="font-body-base text-body-base font-bold text-on-surface">Dr. Jean-Pierre Mampuya</p>
+<p class="font-body-base text-text-xs text-on-surface-variant mb-2">Secrétaire Général Académique</p>
+<div class="space-y-1 mt-2 border-t border-surface-dim pt-2">
+<p class="font-label-mono text-text-xs text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px] text-outline">mail</span> jp.mampuya@isc.ac.cd
+                                </p>
+<p class="font-label-mono text-text-xs text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px] text-outline">phone</span> +243 81 234 5678
+                                </p>
+<p class="font-label-mono text-text-xs text-on-surface flex items-center gap-2 mt-2 bg-surface-container-high p-1 rounded inline-flex">
+<span class="material-symbols-outlined text-[14px] text-outline">fingerprint</span> ID: MIN-REG-9921
+                                </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Action Panel (Load Bearing) -->
+<section class="bg-surface-container-lowest border-2 border-surface-dim rounded-lg p-space-6 sticky top-24">
+<h3 class="font-headline-md text-[20px] font-semibold text-on-surface mb-2">Final Determination</h3>
+<p class="font-body-base text-sm text-on-surface-variant mb-6">Reviewing this application commits the institution to the official registry. This action is immutable once anchored.</p>
+<div class="flex flex-col gap-3">
+<button class="w-full bg-primary text-on-primary font-body-base font-bold text-body-base py-3 px-4 rounded shadow-sm hover:bg-surface-tint transition-colors flex justify-center items-center gap-2" onclick="document.getElementById('approveModal').classList.remove('hidden')">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">how_to_reg</span>
+                             Approve &amp; Anchor Institution
+                         </button>
+<button class="w-full border border-error text-error font-body-base font-bold text-body-base py-3 px-4 rounded hover:bg-error-container hover:text-on-error-container transition-colors flex justify-center items-center gap-2 bg-surface-container-lowest" onclick="document.getElementById('rejectModal').classList.remove('hidden')">
+<span class="material-symbols-outlined">cancel</span>
+                             Reject Application
+                         </button>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Approve Confirmation Modal -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-surface bg-opacity-50 backdrop-blur-sm transition-opacity" id="approveModal">
+<div class="bg-surface-container-lowest rounded-lg max-w-md w-full p-6 shadow-xl border border-outline-variant relative">
+<button class="absolute top-4 right-4 text-outline hover:text-on-surface" onclick="document.getElementById('approveModal').classList.add('hidden')">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="flex items-center gap-4 mb-4 border-b border-surface-dim pb-4">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<h2 class="font-headline-md text-[24px] font-bold text-on-surface">Confirm Approval</h2>
+</div>
+<p class="font-body-base text-body-base text-on-surface-variant mb-4">
+                You are about to officially register <strong>Institut Supérieur de Commerce</strong>. This will authorize them to issue verifiable anchored certificates on the ACVS network.
+            </p>
+<div class="bg-surface-container-high p-3 rounded mb-6 border-l-4 border-primary">
+<p class="font-label-mono text-sm text-on-surface">Action requires Digital Signature.</p>
+</div>
+<div class="flex justify-end gap-3">
+<button class="px-4 py-2 border border-outline text-on-surface rounded font-body-base hover:bg-surface-container transition-colors" onclick="document.getElementById('approveModal').classList.add('hidden')">
+                    Cancel
+                </button>
+<button class="px-4 py-2 bg-primary text-on-primary rounded font-body-base font-bold shadow hover:bg-surface-tint transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">key</span> Sign &amp; Anchor
+                </button>
+</div>
+</div>
+</div>
+<!-- Reject Confirmation Modal (High Alert) -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-surface bg-opacity-70 backdrop-blur-sm transition-opacity" id="rejectModal">
+<div class="bg-surface-container-lowest rounded-lg max-w-md w-full p-6 shadow-2xl border-2 border-error relative">
+<div class="flex items-center gap-4 mb-4 border-b border-error-container pb-4">
+<div class="w-12 h-12 rounded-full bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[28px]">warning</span>
+</div>
+<h2 class="font-headline-md text-[24px] font-bold text-error">Reject Application</h2>
+</div>
+<p class="font-body-base text-body-base text-on-surface mb-4">
+                You are rejecting the accreditation application for <strong>Institut Supérieur de Commerce</strong>. 
+            </p>
+<div class="mb-6">
+<label class="block font-body-base text-sm font-semibold text-on-surface mb-2">Reason for Rejection (Required)</label>
+<textarea class="w-full border border-outline rounded p-2 font-body-base text-sm focus:ring-2 focus:ring-error focus:border-error bg-surface" placeholder="Enter official reason for ministry records..." rows="3"></textarea>
+</div>
+<div class="flex justify-end gap-3">
+<button class="px-4 py-2 border border-outline text-on-surface rounded font-body-base hover:bg-surface-container transition-colors" onclick="document.getElementById('rejectModal').classList.add('hidden')">
+                    Cancel
+                </button>
+<!-- Destructive button filled only on confirmation -->
+<button class="px-4 py-2 bg-error text-on-error rounded font-body-base font-bold shadow hover:bg-red-800 transition-colors">
+                    Confirm Rejection
+                </button>
+</div>
+</div>
+</div>
+</body></html>

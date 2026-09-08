@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ACVS Ministry Administrator Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;800&amp;family=Arimo:wght@400&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffb3ad",
+                        "surface-container-high": "#eae7e7",
+                        "on-surface-variant": "#414754",
+                        "inverse-surface": "#313030",
+                        "on-surface": "#1c1b1b",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#211b00",
+                        "secondary-fixed": "#ffe255",
+                        "on-secondary-container": "#706000",
+                        "secondary-container": "#fddc21",
+                        "surface-container-low": "#f6f3f2",
+                        "surface": "#fcf9f8",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#410003",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary-fixed-variant": "#930011",
+                        "on-tertiary-container": "#fffbff",
+                        "on-primary-container": "#fefcff",
+                        "secondary": "#6e5e00",
+                        "primary-fixed-dim": "#abc7ff",
+                        "primary-container": "#0072e5",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#e5c500",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#004590",
+                        "on-background": "#1c1b1b",
+                        "tertiary-fixed": "#ffdad6",
+                        "primary": "#005ab7",
+                        "on-secondary-fixed-variant": "#534600",
+                        "background": "#fcf9f8",
+                        "tertiary": "#bb0019",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-primary-fixed": "#001b3f",
+                        "outline-variant": "#c1c6d7",
+                        "outline": "#717786",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#e2242c",
+                        "surface-variant": "#e5e2e1",
+                        "primary-fixed": "#d7e2ff",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#f0eded",
+                        "inverse-primary": "#abc7ff",
+                        "surface-bright": "#fcf9f8",
+                        "surface-tint": "#005cbc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "space-2": "8px",
+                        "space-12": "48px",
+                        "container-max": "1280px",
+                        "space-1": "4px",
+                        "space-6": "24px",
+                        "space-4": "16px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Libre Franklin"],
+                        "label-mono": ["JetBrains Mono"],
+                        "body-base": ["Arimo"],
+                        "text-xs": ["Arimo"],
+                        "headline-md": ["Libre Franklin"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["36px", { "lineHeight": "1.1", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+                        "label-mono": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-base": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "text-xs": ["12px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "headline-md": ["28px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-base antialiased min-h-screen flex flex-col items-center justify-center p-space-6">
+<div class="w-full max-w-md bg-surface-container-lowest border border-outline-variant shadow-sm rounded-lg p-space-6 md:p-12 relative overflow-hidden">
+<!-- Subtle top border accent indicating official nature -->
+<div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+<div class="flex flex-col items-center text-center mb-10">
+<div class="w-24 h-24 mb-space-4 bg-primary rounded-full flex items-center justify-center p-4">
+<img alt="ACVS Logo" class="w-full h-full object-contain filter invert brightness-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuh_TSrBbe3LcEN5fi-JXpCFe0mcUGk_Y6OEKOJlx_BYh0Epki5FPH0sTEbgEfxkjn9bqwROo1XoXmfHlTa2gwQh69iNR7DdbMz3nXajOYacOJSkh-5GUV3oMeT4gUVYPuau50iE5t8tMMF3l5j3SQM1TbjNYaIblpu3eKX2u-1kwdPaNhEIHttAemQTHu4qi5ejIZUans0I3_Nd5AvPvkE16rGmr6iwJMpz_-rwP-zO3Nk5zbeObG3BsN0LuiFwYqAw"/>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight mb-2">ACVS</h1>
+<h2 class="font-headline-md text-headline-md text-on-surface-variant leading-tight">Ministry Administrator Portal</h2>
+</div>
+<form class="space-y-space-6">
+<div>
+<label class="block font-label-mono text-label-mono text-on-surface mb-2" for="email">Email Address</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline-variant" data-icon="mail">mail</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded bg-surface focus:ring-primary focus:border-primary text-on-surface sm:text-sm transition-colors placeholder-outline" id="email" name="email" placeholder="admin@edu.gouv.cd" required="" type="email"/>
+</div>
+</div>
+<div>
+<label class="block font-label-mono text-label-mono text-on-surface mb-2" for="password">Password</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline-variant" data-icon="lock">lock</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded bg-surface focus:ring-primary focus:border-primary text-on-surface sm:text-sm transition-colors placeholder-outline" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-2 mb-space-6">
+<div class="flex items-center">
+<input class="h-4 w-4 text-primary focus:ring-primary border-outline-variant rounded" id="remember-me" name="remember-me" type="checkbox"/>
+<label class="ml-2 block font-body-base text-body-base text-on-surface-variant" for="remember-me">
+                        Remember session
+                    </label>
+</div>
+<div class="text-sm">
+<a class="font-body-base text-body-base text-primary hover:text-primary-fixed-dim font-medium transition-colors" href="#">Forgot password?</a>
+</div>
+</div>
+<button class="w-full flex justify-center py-4 px-4 border border-transparent rounded bg-primary text-on-primary font-headline-md text-body-base hover:bg-surface-tint focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary shadow-sm transition-all active:scale-[0.98]" type="submit">
+                Sign In
+            </button>
+</form>
+<div class="mt-8 pt-6 border-t border-outline-variant text-center">
+<p class="font-text-xs text-text-xs text-outline flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="security">security</span>
+                Authorized Personnel Only
+            </p>
+</div>
+</div>
+</body></html>

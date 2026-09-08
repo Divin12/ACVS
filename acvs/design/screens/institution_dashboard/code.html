@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ACVS - Registre Institutionnel | Ministère de l'Éducation Nationale</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Libre+Franklin:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#f0eded",
+                      "on-secondary-fixed": "#211b00",
+                      "on-secondary": "#ffffff",
+                      "secondary-container": "#fddc21",
+                      "on-tertiary-fixed": "#410003",
+                      "on-surface": "#1c1b1b",
+                      "tertiary-fixed": "#ffdad6",
+                      "outline": "#717786",
+                      "primary-fixed": "#d7e2ff",
+                      "on-tertiary-fixed-variant": "#930011",
+                      "outline-variant": "#c1c6d7",
+                      "on-secondary-container": "#706000",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed-dim": "#abc7ff",
+                      "on-surface-variant": "#414754",
+                      "surface-tint": "#005cbc",
+                      "surface-container-highest": "#e5e2e1",
+                      "on-error-container": "#93000a",
+                      "tertiary": "#bb0019",
+                      "secondary": "#6e5e00",
+                      "surface-container-high": "#eae7e7",
+                      "secondary-fixed": "#ffe255",
+                      "tertiary-fixed-dim": "#ffb3ad",
+                      "on-primary-container": "#fefcff",
+                      "tertiary-container": "#e2242c",
+                      "inverse-surface": "#313030",
+                      "surface": "#fcf9f8",
+                      "surface-container-low": "#f6f3f2",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-container": "#0072e5",
+                      "on-background": "#1c1b1b",
+                      "primary": "#005ab7",
+                      "surface-bright": "#fcf9f8",
+                      "inverse-on-surface": "#f3f0ef",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed-variant": "#004590",
+                      "on-primary-fixed": "#001b3f",
+                      "inverse-primary": "#abc7ff",
+                      "surface-dim": "#dcd9d9",
+                      "on-tertiary-container": "#fffbff",
+                      "on-secondary-fixed-variant": "#534600",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#e5c500",
+                      "on-error": "#ffffff",
+                      "background": "#fcf9f8",
+                      "surface-variant": "#e5e2e1",
+                      "error": "#ba1a1a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "space-4": "16px",
+                      "space-12": "48px",
+                      "space-1": "4px",
+                      "space-6": "24px",
+                      "unit": "4px",
+                      "container-max": "1280px",
+                      "space-2": "8px"
+              },
+              "fontFamily": {
+                      "label-mono": ["JetBrains Mono", "monospace"],
+                      "text-xs": ["Arimo", "sans-serif"],
+                      "body-base": ["Arimo", "sans-serif"],
+                      "headline-md": ["Libre Franklin", "sans-serif"],
+                      "display-lg": ["Libre Franklin", "sans-serif"]
+              },
+              "fontSize": {
+                      "label-mono": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                      "text-xs": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "body-base": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "display-lg": ["36px", {"lineHeight": "1.1", "letterSpacing": "-0.01em", "fontWeight": "800"}]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-base antialiased selection:bg-primary-container selection:text-on-primary-container flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface border-b border-outline-variant full-width top w-full z-50">
+<div class="flex justify-between items-center w-full px-space-6 max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-space-4">
+<div class="h-12 w-12 rounded-full overflow-hidden border border-outline-variant bg-primary flex items-center justify-center">
+<img alt="Logo de la République Démocratique du Congo" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd0IaMw7iiG3tX8H5lGf8bdgyfkBo3OYrKprezDX-Sy4eNObrHjibN-tC_lk7HNufiUlaMKI_oi_YJhZe2jLXtie65gVmC4eWfKoC8JZJ1lWmotwr_fdR-8CjQrLp9J3nkpDMu94uWBNvoa0obdlG_rf7LARBbbPyy_BcjNCTYVOt770ZWeqRP_HXqNxOQjVgTMhkP0DThz02J25E7gjdz-tQExP12-s2Wvl8e1oy0ySZUwa0vsQuKBnXjPZZTYIMw_A"/>
+</div>
+<div class="flex flex-col">
+<span class="text-body-base font-bold uppercase tracking-wider text-on-surface dark:text-inverse-on-surface">MINISTÈRE DE L'ÉDUCATION NATIONALE</span>
+<span class="text-text-xs font-text-xs text-on-surface-variant">ACVS - Registre Institutionnel</span>
+</div>
+</div>
+<nav class="hidden md:flex items-center gap-space-6 h-full">
+<a class="text-primary dark:text-inverse-primary border-b-2 border-primary pb-1 font-bold h-full flex items-center opacity-80 duration-150" href="#">Tableau de bord</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary h-full flex items-center hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors px-2" href="#">Registres</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary h-full flex items-center hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors px-2" href="#">Vérification</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary h-full flex items-center hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors px-2" href="#">Archives</a>
+</nav>
+<div class="flex items-center gap-space-4">
+<div class="hidden lg:flex items-center bg-surface-container rounded-full px-space-4 py-2 border border-outline-variant focus-within:ring-2 focus-within:ring-primary focus-within:border-primary transition-all">
+<span class="material-symbols-outlined text-on-surface-variant mr-2">search</span>
+<input class="bg-transparent border-none outline-none text-body-base font-body-base text-on-surface placeholder:text-on-surface-variant w-48 focus:ring-0" placeholder="Rechercher ID Certificat..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary hover:bg-on-primary-fixed-variant transition-colors px-space-6 py-2 rounded font-body-base font-semibold shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined">add</span>
+                    Nouvel Enregistrement
+                </button>
+</div>
+</div>
+</header>
+<div class="flex flex-1 max-w-container-max mx-auto w-full">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col bg-surface-container-low dark:bg-surface-container-lowest docked left-0 h-full w-64 border-r border-outline-variant py-space-6 flex-shrink-0">
+<div class="px-space-6 mb-space-6">
+<h2 class="text-headline-md font-headline-md text-on-surface">ACVS Portale</h2>
+<p class="text-text-xs font-text-xs text-on-surface-variant mt-1">Administration Centrale</p>
+</div>
+<nav class="flex-1 flex flex-col gap-1 px-2">
+<a class="bg-secondary-container text-on-secondary-container border-l-4 border-secondary font-bold flex items-center gap-space-4 px-space-4 py-3 text-label-mono font-label-mono focus:ring-2 focus:ring-primary outline-none" href="#">
+<span class="material-symbols-outlined filled text-secondary">dashboard</span>
+                    Vue d'ensemble
+                </a>
+<a class="text-on-surface-variant hover:bg-surface-container-high hover:bg-surface-container-high transition-all flex items-center gap-space-4 px-space-4 py-3 text-label-mono font-label-mono border-l-4 border-transparent focus:ring-2 focus:ring-primary outline-none" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+                    Certificats
+                </a>
+<a class="text-on-surface-variant hover:bg-surface-container-high hover:bg-surface-container-high transition-all flex items-center gap-space-4 px-space-4 py-3 text-label-mono font-label-mono border-l-4 border-transparent focus:ring-2 focus:ring-primary outline-none" href="#">
+<span class="material-symbols-outlined">account_balance</span>
+                    Établissements
+                </a>
+<a class="text-on-surface-variant hover:bg-surface-container-high hover:bg-surface-container-high transition-all flex items-center gap-space-4 px-space-4 py-3 text-label-mono font-label-mono border-l-4 border-transparent focus:ring-2 focus:ring-primary outline-none" href="#">
+<span class="material-symbols-outlined">history</span>
+                    Journal d'audit
+                </a>
+<a class="text-on-surface-variant hover:bg-surface-container-high hover:bg-surface-container-high transition-all flex items-center gap-space-4 px-space-4 py-3 text-label-mono font-label-mono border-l-4 border-transparent focus:ring-2 focus:ring-primary outline-none" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Paramètres
+                </a>
+</nav>
+<div class="mt-auto px-2 flex flex-col gap-1 border-t border-outline-variant pt-space-4">
+<a class="text-on-surface-variant hover:bg-surface-container-high transition-all flex items-center gap-space-4 px-space-4 py-3 text-label-mono font-label-mono rounded" href="#">
+<span class="material-symbols-outlined">help</span>
+                    Aide
+                </a>
+<a class="text-on-surface-variant hover:bg-surface-container-high transition-all flex items-center gap-space-4 px-space-4 py-3 text-label-mono font-label-mono rounded" href="#">
+<span class="material-symbols-outlined">logout</span>
+                    Déconnexion
+                </a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-space-6 lg:p-space-12 overflow-y-auto">
+<div class="mb-space-6 flex justify-between items-end">
+<div>
+<h1 class="text-headline-md font-headline-md text-on-surface mb-2">Tableau de bord institutionnel</h1>
+<p class="text-body-base font-body-base text-on-surface-variant">Vue d'ensemble de l'état du registre national.</p>
+</div>
+<div class="text-right text-text-xs font-text-xs text-on-surface-variant bg-surface-container-low px-4 py-2 rounded border border-outline-variant">
+                    Dernière synchronisation: <span class="font-label-mono font-bold">14 Oct 2024, 09:42 UTC</span>
+</div>
+</div>
+<!-- Summary Cards (12 Column Grid Layout) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-6 mb-space-12">
+<!-- Grace Period Card -->
+<div class="col-span-1 md:col-span-4 bg-surface rounded-lg border border-outline-variant p-space-6 shadow-sm hover:shadow transition-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-[rgba(253,220,33,0.1)] rounded-bl-full"></div>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-body-base font-body-base font-semibold text-on-surface">Période de Grâce</h3>
+<span class="material-symbols-outlined text-[rgba(112,96,0,1)] bg-[rgba(253,220,33,0.2)] p-2 rounded-full">schedule</span>
+</div>
+<div class="text-display-lg font-display-lg text-on-surface mb-2">1,204</div>
+<p class="text-text-xs font-text-xs text-on-surface-variant flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary-container inline-block"></span>
+                        En attente d'ancrage définitif
+                    </p>
+</div>
+<!-- Anchored Card -->
+<div class="col-span-1 md:col-span-4 bg-surface rounded-lg border-b-4 border-b-[#10b981] border-t border-l border-r border-outline-variant p-space-6 shadow-none relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-[rgba(16,185,129,0.05)] rounded-full -mr-8 -mt-8 flex items-center justify-center">
+<div class="w-16 h-16 border border-[rgba(16,185,129,0.2)] rounded-full flex items-center justify-center">
+<div class="w-8 h-8 border border-[rgba(16,185,129,0.4)] rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between mb-4 relative z-10">
+<h3 class="text-body-base font-body-base font-semibold text-on-surface">Ancrés (Immuables)</h3>
+<span class="material-symbols-outlined text-[#059669] bg-[rgba(16,185,129,0.1)] p-2 rounded-full">lock</span>
+</div>
+<div class="text-display-lg font-display-lg text-on-surface mb-2 relative z-10">84,592</div>
+<p class="text-text-xs font-text-xs text-on-surface-variant flex items-center gap-1 relative z-10">
+<span class="w-2 h-2 rounded-full bg-[#10b981] inline-block"></span>
+                        Certificats scellés cryptographiquement
+                    </p>
+</div>
+<!-- Disabled Card -->
+<div class="col-span-1 md:col-span-4 bg-surface rounded-lg border border-outline-variant p-space-6 shadow-sm hover:shadow transition-shadow relative overflow-hidden">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-body-base font-body-base font-semibold text-on-surface">Désactivés / Révoqués</h3>
+<span class="material-symbols-outlined text-error bg-error-container p-2 rounded-full">block</span>
+</div>
+<div class="text-display-lg font-display-lg text-error mb-2">143</div>
+<p class="text-text-xs font-text-xs text-on-surface-variant flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-error inline-block"></span>
+                        Nécessitent une attention administrative
+                    </p>
+</div>
+</div>
+<!-- Recent Activity Table -->
+<div class="bg-surface border border-outline-variant rounded-lg overflow-hidden">
+<div class="px-space-6 py-space-4 border-b border-outline-variant bg-surface-container-lowest flex justify-between items-center">
+<h3 class="text-body-base font-headline-md font-semibold text-on-surface">Activité Récente d'Enregistrement</h3>
+<button class="text-text-xs font-text-xs text-primary font-semibold hover:underline">Voir tout l'historique</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="py-3 px-space-6 text-label-mono font-label-mono text-on-surface-variant">ID CERTIFICAT</th>
+<th class="py-3 px-space-6 text-label-mono font-label-mono text-on-surface-variant">ÉTABLISSEMENT</th>
+<th class="py-3 px-space-6 text-label-mono font-label-mono text-on-surface-variant">DATE SOUMISSION</th>
+<th class="py-3 px-space-6 text-label-mono font-label-mono text-on-surface-variant">STATUT</th>
+<th class="py-3 px-space-6 text-label-mono font-label-mono text-on-surface-variant text-right">ACTIONS</th>
+</tr>
+</thead>
+<tbody class="text-body-base font-body-base text-on-surface">
+<!-- Row 1: Grace Period -->
+<tr class="border-b border-outline-variant hover:bg-surface-container-lowest transition-colors">
+<td class="py-4 px-space-6">
+<span class="bg-surface-container-high px-2 py-1 rounded text-label-mono font-label-mono text-sm border border-outline-variant">
+                                        RDC-2024-89A1B2
+                                    </span>
+</td>
+<td class="py-4 px-space-6">Université de Kinshasa</td>
+<td class="py-4 px-space-6">Aujourd'hui, 08:30</td>
+<td class="py-4 px-space-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[rgba(253,220,33,0.1)] border border-[rgba(253,220,33,0.3)]">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="text-text-xs font-bold text-[#706000]">Période de Grâce</span>
+</div>
+<div class="text-text-xs mt-1 text-on-surface-variant ml-2">Expire dans 48h</div>
+</td>
+<td class="py-4 px-space-6 text-right">
+<button class="text-primary hover:text-on-primary-fixed-variant p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Anchored -->
+<tr class="border-b border-outline-variant hover:bg-surface-container-lowest transition-colors">
+<td class="py-4 px-space-6">
+<span class="bg-surface-container-high px-2 py-1 rounded text-label-mono font-label-mono text-sm border border-outline-variant">
+                                        RDC-2024-7C4D5E
+                                    </span>
+</td>
+<td class="py-4 px-space-6">Institut Supérieur Pédagogique</td>
+<td class="py-4 px-space-6">Hier, 14:15</td>
+<td class="py-4 px-space-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[rgba(16,185,129,0.1)] border border-[rgba(16,185,129,0.3)]">
+<span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+<span class="text-text-xs font-bold text-[#065f46]">Ancré</span>
+</div>
+<div class="text-text-xs mt-1 text-on-surface-variant ml-2 font-label-mono text-[10px]">Tx: 0x9f...3a2b</div>
+</td>
+<td class="py-4 px-space-6 text-right">
+<button class="text-on-surface-variant hover:text-primary p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Disabled -->
+<tr class="border-b border-outline-variant hover:bg-surface-container-lowest transition-colors bg-error-container/10">
+<td class="py-4 px-space-6">
+<span class="bg-surface-container-high px-2 py-1 rounded text-label-mono font-label-mono text-sm border border-outline-variant opacity-70">
+                                        RDC-2023-F9E8D7
+                                    </span>
+</td>
+<td class="py-4 px-space-6 text-on-surface-variant">Lycée Prince de Liège</td>
+<td class="py-4 px-space-6 text-on-surface-variant">12 Oct 2024</td>
+<td class="py-4 px-space-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-error-container border border-error/30">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="text-text-xs font-bold text-on-error-container">Révoqué</span>
+</div>
+</td>
+<td class="py-4 px-space-6 text-right">
+<button class="text-on-surface-variant hover:text-primary p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">info</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: Anchored -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-4 px-space-6">
+<span class="bg-surface-container-high px-2 py-1 rounded text-label-mono font-label-mono text-sm border border-outline-variant">
+                                        RDC-2024-1A2B3C
+                                    </span>
+</td>
+<td class="py-4 px-space-6">Université de Lubumbashi</td>
+<td class="py-4 px-space-6">10 Oct 2024</td>
+<td class="py-4 px-space-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[rgba(16,185,129,0.1)] border border-[rgba(16,185,129,0.3)]">
+<span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+<span class="text-text-xs font-bold text-[#065f46]">Ancré</span>
+</div>
+</td>
+<td class="py-4 px-space-6 text-right">
+<button class="text-on-surface-variant hover:text-primary p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-surface-dim full-width bottom py-space-4 border-t border-outline-variant mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-space-6 w-full max-w-container-max mx-auto">
+<p class="text-text-xs font-text-xs text-on-surface-variant dark:text-on-surface-variant mb-4 md:mb-0">
+                © 2024 Ministère de l'Éducation Nationale et Nouvelle Citoyenneté - République Démocratique du Congo
+            </p>
+<div class="flex gap-space-4">
+<a class="text-text-xs font-text-xs text-on-surface-variant hover:text-primary transition-colors" href="#">Conditions d'utilisation</a>
+<a class="text-text-xs font-text-xs text-on-surface-variant hover:text-primary transition-colors" href="#">Confidentialité</a>
+<a class="text-text-xs font-text-xs text-on-surface-variant hover:text-primary transition-colors" href="#">Contactez l'administrateur</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,15 @@
+{
+  "name": "acvs-contracts",
+  "version": "0.1.0",
+  "description": "Smart contracts for the ACVS certificate registry",
+  "private": true,
+  "scripts": {
+    "compile": "truffle compile",
+    "migrate": "truffle migrate --network development",
+    "migrate:reset": "truffle migrate --reset --network development",
+    "test": "truffle test"
+  },
+  "devDependencies": {
+    "truffle": "^5.11.0"
+  }
+}

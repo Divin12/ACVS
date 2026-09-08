@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ACVS DRC - Institution Login</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Libre+Franklin:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#c1c6d7",
+                    "on-secondary-fixed": "#211b00",
+                    "surface-container-highest": "#e5e2e1",
+                    "primary-container": "#0072e5",
+                    "on-tertiary-fixed-variant": "#930011",
+                    "on-tertiary-fixed": "#410003",
+                    "surface-container-high": "#eae7e7",
+                    "tertiary-fixed": "#ffdad6",
+                    "primary-fixed-dim": "#abc7ff",
+                    "error-container": "#ffdad6",
+                    "surface": "#fcf9f8",
+                    "primary": "#005ab7",
+                    "surface-container-low": "#f6f3f2",
+                    "inverse-surface": "#313030",
+                    "inverse-on-surface": "#f3f0ef",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#ffb3ad",
+                    "tertiary-container": "#e2242c",
+                    "on-primary-fixed": "#001b3f",
+                    "surface-bright": "#fcf9f8",
+                    "primary-fixed": "#d7e2ff",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#bb0019",
+                    "surface-container": "#f0eded",
+                    "background": "#fcf9f8",
+                    "outline": "#717786",
+                    "on-primary-fixed-variant": "#004590",
+                    "secondary-container": "#fddc21",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#706000",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#e5c500",
+                    "surface-tint": "#005cbc",
+                    "surface-dim": "#dcd9d9",
+                    "on-surface": "#1c1b1b",
+                    "on-secondary-fixed-variant": "#534600",
+                    "on-tertiary-container": "#fffbff",
+                    "on-primary-container": "#fefcff",
+                    "inverse-primary": "#abc7ff",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#414754",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#6e5e00",
+                    "surface-variant": "#e5e2e1",
+                    "secondary-fixed": "#ffe255",
+                    "on-primary": "#ffffff",
+                    "on-background": "#1c1b1b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "space-6": "24px",
+                    "space-12": "48px",
+                    "space-1": "4px",
+                    "space-4": "16px",
+                    "space-2": "8px",
+                    "unit": "4px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "headline-md": [
+                            "Libre Franklin"
+                    ],
+                    "text-xs": [
+                            "Arimo"
+                    ],
+                    "body-base": [
+                            "Arimo"
+                    ],
+                    "label-mono": [
+                            "JetBrains Mono"
+                    ],
+                    "display-lg": [
+                            "Libre Franklin"
+                    ]
+            },
+            "fontSize": {
+                    "headline-md": [
+                            "28px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "text-xs": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-base": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-mono": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display-lg": [
+                            "36px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "800"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .tricolor-bar {
+            background: linear-gradient(90deg, #0072e5 33%, #fddc21 33%, #fddc21 66%, #e2242c 66%);
+            height: 4px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-base min-h-screen flex flex-col items-center justify-center p-space-4">
+<!-- Top Tricolor Bar (Symbolic) -->
+<div class="fixed top-0 left-0 w-full tricolor-bar"></div>
+<main class="w-full max-w-md mx-auto">
+<div class="bg-surface-container-lowest border border-outline-variant p-space-6 shadow-sm rounded-lg flex flex-col items-center">
+<!-- Official Lockup -->
+<div class="mb-space-6 flex flex-col items-center text-center">
+<img alt="DRC Coat of Arms" class="w-24 h-24 mb-space-2 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2ZpATJ8k5UtpMwdC078Zm-xMkuCghyD6klXmYR5vQN12g-2DaHRTy_ZIlwstaPJEu5cxJ2SkVmBQWBtT9xLw4rAQprlUwWewGrzqpJ5EFRu6RkaSlgB14nBjCLGk6sncL7UuXcEQ7qE1gpdevyTOyP-GHrxZFoQZ2EGH-9GiSqg06BYejRd70tifdAQKpqQ0mp_mcWQq5e0R_lHZzk8wX_kckbbig5FCEAUX9QvBssDUuNsWdA_AI1J_armZU9MuwWg"/>
+<h1 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">République Démocratique du Congo</h1>
+<p class="font-body-base text-body-base text-on-surface-variant mt-1">Ministère de l'Éducation Nationale et Nouvelle Citoyenneté</p>
+<div class="w-12 border-b-2 border-outline mt-space-2"></div>
+<h2 class="font-headline-md text-[20px] font-semibold text-primary mt-space-4">ACVS Administration</h2>
+</div>
+<!-- Login Form -->
+<form class="w-full flex flex-col gap-space-4">
+<div class="flex flex-col gap-space-1">
+<label class="font-label-mono text-label-mono text-on-surface uppercase tracking-wider text-xs" for="email">Email Address</label>
+<input class="w-full bg-surface border-2 border-on-surface text-on-surface font-body-base p-space-2 rounded-none focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="email" placeholder="user@edu.cd" required="" type="email"/>
+</div>
+<div class="flex flex-col gap-space-1">
+<label class="font-label-mono text-label-mono text-on-surface uppercase tracking-wider text-xs" for="password">Password</label>
+<input class="w-full bg-surface border-2 border-on-surface text-on-surface font-body-base p-space-2 rounded-none focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="password" placeholder="••••••••" required="" type="password"/>
+</div>
+<div class="flex justify-end w-full">
+<a class="font-body-base text-body-base text-on-surface-variant hover:text-primary underline text-sm transition-colors" href="#">Forgot Password?</a>
+</div>
+<button class="w-full bg-primary text-on-primary font-body-base font-semibold py-space-2 px-space-4 hover:bg-primary-container hover:text-on-primary-container transition-colors mt-space-2 flex items-center justify-center gap-space-2 rounded-sm border border-transparent active:border-on-surface" type="submit">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">login</span>
+                    Sign In
+                </button>
+</form>
+<div class="mt-space-6 text-center border-t border-outline-variant pt-space-4 w-full">
+<p class="font-label-mono text-label-mono text-on-surface-variant uppercase text-[10px] tracking-widest flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+                    Authorized Personnel Only
+                </p>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="fixed bottom-0 left-0 w-full py-space-4 px-space-4 border-t border-outline-variant bg-surface flex flex-col md:flex-row justify-between items-center z-10 text-center md:text-left gap-space-2">
+<p class="font-body-base text-text-xs text-on-surface-variant">© 2024 République Démocratique du Congo - Ministère de l'Education Nationale et Nouvelle Citoyenneté</p>
+<div class="flex gap-space-4">
+<a class="font-body-base text-text-xs text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-base text-text-xs text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-base text-text-xs text-on-surface-variant hover:text-primary transition-colors" href="#">Technical Support</a>
+</div>
+</footer>
+</body></html>
